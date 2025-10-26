@@ -1409,14 +1409,11 @@ import { getThemeByName } from '../utils/themes.js'
 
 ## 📄 License
 
-This project is proprietary and confidential. All rights reserved.
-
 **Restrictions:**
 - No unauthorized distribution
 - No commercial use without permission
-- Internal use only
 
-For licensing inquiries, contact: [your-email@example.com]
+For more info, contact: baptiste.riffard@gmail.com
 
 ---
 
@@ -1440,7 +1437,7 @@ For licensing inquiries, contact: [your-email@example.com]
 - Open Source Community
 
 ---
-
+<!--
 ## 📞 Support & Contact
 
 **Documentation:**
@@ -1456,9 +1453,9 @@ For licensing inquiries, contact: [your-email@example.com]
 **Office Hours:**
 - Monday-Friday: 9:00 AM - 5:00 PM EST
 - Response Time: < 24 hours
-
+-->
 ---
-
+<!--
 ## 🗺️ Roadmap
 
 ### Q1 2024
@@ -1484,7 +1481,7 @@ For licensing inquiries, contact: [your-email@example.com]
 - [ ] Plugin system
 - [ ] Advanced analytics dashboard
 - [ ] Enterprise features
-
+-->
 ---
 
 ## 📊 Project Statistics
@@ -1529,5 +1526,5 @@ Test Coverage:     85%
 
 <div align="center">
   <p>Made with ❤️ and ☕</p>
-  <p>© 2024 HyperIN. All rights reserved.</p>
+<!--   <p>© 2024 HyperIN. All rights reserved.</p> -->
 </div>
