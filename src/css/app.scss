@@ -1,1 +1,340 @@
 // app global css in SCSS form
+// app global css in Sass form
+
+.custom-notification {
+  border: solid 2px;
+  .q-notification__message {
+    color: #000;
+  }
+  &.custom-notification--positive {
+    border-color: $green-8;
+  }
+  &.custom-notification--negative {
+    border-color: $red-8;
+  }
+  &.custom-notification--info {
+    border-color: $blue-8;
+  }
+  &.custom-notification--warning {
+    border-color: $orange-8;
+  }
+}
+
+.headline {
+  font-family: Roboto;
+  &-large {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+  }
+  &-medium {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+  }
+  &-small {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+  }
+}
+
+.title {
+  font-family: Roboto;
+  &-large {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+  }
+  &-medium {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15000000596046448px;
+  }
+  &-small {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.10000000149011612px;
+  }
+}
+
+.label {
+  font-family: Roboto;
+  &-large {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.10000000149011612px;
+  }
+  &-medium {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
+  &-small {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.body {
+  font-family: Roboto;
+  &-large {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+  &-medium {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+  &-small {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+  }
+}
+
+h1 {
+  font-size: 30px !important;
+  line-height: 40px;
+}
+h2 {
+  font-size: 26px !important;
+  line-height: 36px;
+}
+h3 {
+  font-size: 22px !important;
+  line-height: 32px;
+}
+h4 {
+  font-size: 20px !important;
+  line-height: 28px;
+}
+h5 {
+  font-size: 16px !important;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+h6 {
+  font-size: 14px !important;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.article-title {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+.body-large {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+// Custom color palette to use on Quasar components
+// I.e. color="mng-primary"
+
+.text-mng {
+  &-primary {
+    color: #006a61 !important;
+    &-container {
+      color: #00201d !important;
+    }
+  }
+  &-secondary {
+    color: #4a635f !important;
+    &-container {
+      color: #cce8e3 !important;
+    }
+  }
+  &-tertiary {
+    color: #46617a !important;
+    &-container {
+      color: #cde5ff !important;
+    }
+  }
+  &-error {
+    color: #ba1a1a !important;
+    &-container {
+      color: #ffdad6 !important;
+    }
+  }
+  &-orange {
+    color: #885200 !important;
+    &-container {
+      color: #ffddbb !important;
+    }
+  }
+  &-green {
+    color: #1c6d24 !important;
+    &-container {
+      color: #a3f69c !important;
+    }
+  }
+  &-purple {
+    color: #8d2ebc !important;
+    &-container {
+      color: #f6d9ff !important;
+    }
+  }
+  &-indigo {
+    color: #6d43c3 !important;
+    &-container {
+      color: #eaddff !important;
+    }
+  }
+  &-yellow {
+    color: #745b00 !important;
+    &-container {
+      color: #ffe08b !important;
+    }
+  }
+}
+
+.bg-mng {
+  &-primary {
+    background: #006a61 !important;
+    &-container {
+      background: #00201d !important;
+    }
+  }
+  &-secondary {
+    background: #4a635f !important;
+    &-container {
+      background: #cce8e3 !important;
+    }
+  }
+  &-tertiary {
+    background: #46617a !important;
+    &-container {
+      background: #cde5ff !important;
+    }
+  }
+  &-error {
+    background: #ba1a1a !important;
+    &-container {
+      background: #ffdad6 !important;
+    }
+  }
+  &-orange {
+    background: #885200 !important;
+    &-container {
+      background: #ffddbb !important;
+    }
+  }
+  &-green {
+    background: #1c6d24 !important;
+    &-container {
+      background: #a3f69c !important;
+    }
+  }
+  &-purple {
+    background: #8d2ebc !important;
+    &-container {
+      background: #f6d9ff !important;
+    }
+  }
+  &-indigo {
+    background: #6d43c3 !important;
+    &-container {
+      background: #eaddff !important;
+    }
+  }
+  &-yellow {
+    background: #745b00 !important;
+    &-container {
+      background: #ffe08b !important;
+    }
+  }
+}
+
+.bg-themed {
+  &-classicLight {
+    background: #ffffff !important;
+  }
+  &-elegantDark {
+    background: #121212 !important;
+  }
+  &-gentleNature {
+    background: #f4f9f4 !important;
+  }
+  &-warmEnergy {
+    background: #fff6e5 !important;
+  }
+}
+
+.text-themed {
+  &-classicLight {
+    color: #222222 !important;
+  }
+  &-elegantDark {
+    color: #e0e0e0 !important;
+  }
+  &-gentleNature {
+    color: #2e3d2f !important;
+  }
+  &-warmEnergy {
+    color: #4a2c2a !important;
+  }
+}
+
+.title-themed {
+  &-classicLight {
+    color: #0a0a0a !important;
+  }
+  &-elegantDark {
+    color: #ffffff !important;
+  }
+  &-gentleNature {
+    color: #1e5631 !important;
+  }
+  &-warmEnergy {
+    color: #e76f51 !important;
+  }
+}
+
+.accent-themed {
+  &-classicLight {
+    color: #007bff !important;
+  }
+  &-elegantDark {
+    color: #bb86fc !important;
+  }
+  &-gentleNature {
+    color: #a4de02 !important;
+  }
+  &-warmEnergy {
+    color: #f4a261 !important;
+  }
+}
+
+.linkhover-themed {
+  &-classicLight {
+    color: #0056b3 !important;
+  }
+  &-elegantDark {
+    color: #985eff !important;
+  }
+  &-gentleNature {
+    color: #76b947 !important;
+  }
+  &-warmEnergy {
+    color: #e9c46a !important;
+  }
+}
