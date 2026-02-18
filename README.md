@@ -2,6 +2,14 @@
 
 > A comprehensive, AI-powered dashboard for tenant management with real-time analytics, ML predictions, and customizable theming.
 
+## Migration Status
+
+React.js migration is currently in progress.
+
+- Current production app: Vue 3 + Quasar (this root project)
+- New target app: React + Vite (located in `react-app/`)
+- Migration strategy: progressive module-by-module migration (search, header, widgets, etc.)
+
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?logo=vue.js&logoColor=white)](https://vuejs.org/)
 [![Quasar](https://img.shields.io/badge/Quasar-2.x-1976D2?logo=quasar&logoColor=white)](https://quasar.dev/)
 [![TensorFlow.js](https://img.shields.io/badge/TensorFlow.js-ML-FF6F00?logo=tensorflow&logoColor=white)](https://www.tensorflow.org/js)

@@ -1,8 +1,11 @@
 import React from 'react'
 import '../header.css'
 
+import useQuickLinksStore from '../../../stores/quickLinks.store'
+
 import DateWidget from './DateWidget'
 import NotificationPanel from './NotificationPanel'
+import SettingsModal from './SettingsModal'
 import WeatherWidget from './WeatherWidget'
 
 import useHeaderPanels from '../hooks/useHeaderPanels'
@@ -10,7 +13,7 @@ import useMessage from '../hooks/useMessage'
 import useNotif from '../hooks/useNotif'
 
 export default function Header() {
-  const { showNotif, showMessages, openHeaderPanel, toggleHeaderPanel, closePanels } =
+  const { showNotif, showMessages, showSettings, openHeaderPanel, toggleHeaderPanel, closePanels } =
     useHeaderPanels()
   const {
     notifications,
@@ -39,12 +42,8 @@ export default function Header() {
     }
   }, [showMessages, refreshMessages])
 
-  const defaultQuickLinks = [
-    { id: 1, name: 'Profile', icon: 'account_circle' },
-    { id: 2, name: 'Help', icon: 'help' },
-    { id: 3, name: 'Report', icon: 'report' },
-    { id: 4, name: 'Logout', icon: 'logout' },
-  ]
+  const { quickLinks } = useQuickLinksStore()
+
   return (
     <div className="flex flex-row items-center justify-between p-4 border-b w-full">
       <div className="flex flex-row items-center gap-4">
@@ -55,7 +54,7 @@ export default function Header() {
       <div className="flex flex-col items-end gap-2">
         <small className="text-[9px] text-gray-400 p-1">Quick Links</small>
         <div className="flex flex-row items-center gap-4">
-          {defaultQuickLinks.map((link) => (
+          {quickLinks.map((link) => (
             <div key={link.id} className="quick-link">
               <span className="material-symbols-outlined" aria-hidden>
                 {link.icon}
@@ -104,10 +103,13 @@ export default function Header() {
             />
           )}
         </div>
-        <button className="header-icon-btn w-10 h-10" aria-label="Settings">
-          <span className="material-symbols-outlined">settings</span>
-        </button>
+        <div className="settings-wrapper" onClick={() => toggleHeaderPanel('settings')}>
+          <button className="header-icon-btn w-10 h-10" aria-label="Settings">
+            <span className="material-symbols-outlined">settings</span>
+          </button>
+        </div>
       </div>
+      {showSettings && <SettingsModal open={showSettings} onClose={closePanels} />}
     </div>
   )
 }

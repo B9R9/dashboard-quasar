@@ -5,23 +5,32 @@ export default function useHeaderPanels() {
 
   const showNotif = activePanel === 'notifications'
   const showMessages = activePanel === 'messages'
+  const showSettings = activePanel === 'settings'
 
   function closePanels() {
     setActivePanel(null)
   }
 
   function openHeaderPanel(panel) {
-    if (panel !== 'notifications' && panel !== 'messages') return
+    if (panel !== 'notifications' && panel !== 'messages' && panel !== 'settings') return
     setActivePanel(panel)
   }
 
   function toggleHeaderPanel(panel) {
-    if (panel !== 'notifications' && panel !== 'messages') {
+    if (panel !== 'notifications' && panel !== 'messages' && panel !== 'settings') {
       closePanels()
       return
     }
     setActivePanel((prev) => (prev === panel ? null : panel))
   }
 
-  return { activePanel, showNotif, showMessages, openHeaderPanel, toggleHeaderPanel, closePanels }
+  return {
+    activePanel,
+    showNotif,
+    showMessages,
+    showSettings,
+    openHeaderPanel,
+    toggleHeaderPanel,
+    closePanels,
+  }
 }
