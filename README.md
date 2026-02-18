@@ -9,6 +9,28 @@
 
 ---
 
+## 🔄 React.js Migration (Pending / In Progress)
+
+The project is currently undergoing a **migration to React.js**.
+
+- **Status:** Pending migration 🚧  
+- **Branch:** `migration-reactjs`  
+- **React app location:** `react-app/`
+
+### Running the React version
+
+```bash
+git fetch
+git checkout migration-reactjs
+cd react-app
+npm install
+npm run dev
+
+```
+
+---
+
+
 ## 📸 Screenshots & Demos
 
 ### Dashboard Overview
