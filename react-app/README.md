@@ -1,16 +1,34 @@
-# React + Vite
+# React Migration Workspace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app is the React.js migration target for the Tenant Dashboard.
 
-Currently, two official plugins are available:
+## Status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Migration is in progress (incremental module-by-module migration).
 
-## React Compiler
+- Source app: Vue 3 + Quasar (root project)
+- Target app: React + Vite (`react-app/`)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run
 
-## Expanding the ESLint configuration
+```bash
+cd react-app
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Build
+
+```bash
+npm run build
+```
+
+## Current Module Scope
+
+- Header module (notifications/messages panel logic, mock data hooks)
+- Search module (input, debounce, results panel, skeleton states)
+
+## Notes
+
+- This folder is intentionally independent from the Quasar app.
+- Migration is ongoing; feature parity is not complete yet.
