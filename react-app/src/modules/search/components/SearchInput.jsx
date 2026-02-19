@@ -7,7 +7,13 @@ export default function SearchInput({ value, onChange, onClear }) {
         search
       </span>
 
-      <input type="text" placeholder="Search..." value={value} onChange={onChange} />
+      <input
+        className="search-input__control"
+        type="text"
+        placeholder="Search..."
+        value={value}
+        onChange={onChange}
+      />
 
       {value ? (
         <button type="button" className="" onClick={onClear} aria-label="Clear search">

@@ -42,9 +42,29 @@
 .search-input__field input:focus {
   outline: none;
   border: none;
-  box-shadow: none;
+  box-shadow: none !important;
   text-decoration: none;
 }
+
+.search-input__control {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.search-input__control:focus,
+.search-input__control:focus-visible {
+  border: none;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.search-input__field:focus-within {
+  border-color: var(--border-color);
+  box-shadow: none;
+}
+
 .search-result-panel {
   width: 100%;
   margin-top: 12px;

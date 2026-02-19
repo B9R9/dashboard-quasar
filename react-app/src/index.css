@@ -70,7 +70,7 @@ input:not([type='checkbox']):not([type='radio']):focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--control-focus);
+  /* border-color: var(--control-focus); */
   box-shadow: 0 0 0 3px var(--control-focus-ring);
 }
 
