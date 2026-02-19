@@ -50,7 +50,11 @@ export default function SettingsQuickLinks() {
             }}
           />
         ))}
-        <button className="mt-2 p-2 bg-blue-500 text-white rounded" onClick={() => openCreate()}>
+        <button
+          className="mt-2 p-2 rounded"
+          style={{ background: 'var(--primary-color)', color: 'var(--danger-contrast-color)' }}
+          onClick={() => openCreate()}
+        >
           Add Quick Link
         </button>
       </div>

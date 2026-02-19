@@ -19,7 +19,9 @@ export default function DateWidget() {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <p className="text-sm text-gray-400">Date</p>
+      <p className="text-sm" style={{ color: 'var(--muted-color)' }}>
+        Date
+      </p>
       <span>{formattedDate}</span>
     </div>
   )

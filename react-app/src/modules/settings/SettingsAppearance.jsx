@@ -2,7 +2,7 @@ import useAppearanceStore from '../../stores/appearance.store'
 import FontSelect from './FontSelect'
 
 export default function SettingsAppearance() {
-  const { font, fontOptions, setFont } = useAppearanceStore()
+  const { theme, themeOptions, setTheme, font, fontOptions, setFont } = useAppearanceStore()
 
   return (
     <div className="settings-appearance">
@@ -11,6 +11,13 @@ export default function SettingsAppearance() {
         Customize the look and feel of your dashboard. You can change themes, font, and other visual
         settings.
       </small>
+      <div className="settings-appearance__option p-4">
+        <label htmlFor="theme-select" className="settings-appearance__option-label">
+          Theme
+        </label>
+        <FontSelect id="theme-select" value={theme} options={themeOptions} onChange={setTheme} />
+      </div>
+
       <div className="settings-appearance__option p-4">
         <label htmlFor="font-select" className="settings-appearance__option-label">
           Font

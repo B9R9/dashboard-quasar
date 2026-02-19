@@ -60,7 +60,7 @@ export default function Search() {
         onChange={(e) => setSearchTerm(e.target.value)}
         onClear={() => setSearchTerm('')}
       />
-      <small className="block w-1/2 text-right text-xs text-slate-500">
+      <small className="block w-1/2 text-right text-xs" style={{ color: 'var(--muted-color)' }}>
         {searchResults.length} results found
       </small>
       <SearchResultPanel

@@ -22,10 +22,24 @@ export default function Settings() {
         </div>
         <hr className="separator" />
         <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
-          <div className="settings-page__content flex flex-col gap-4 border rounded-md p-4">
+          <div
+            className="settings-page__content flex flex-col gap-4 rounded-md p-4"
+            style={{
+              border: '1px solid var(--border-color)',
+              background: 'var(--accent-color)',
+              color: 'var(--text-color)',
+            }}
+          >
             <SettingsQuickLinks />
           </div>
-          <div className="settings-page__content flex flex-col gap-4 border rounded-md p-4">
+          <div
+            className="settings-page__content flex flex-col gap-4 rounded-md p-4"
+            style={{
+              border: '1px solid var(--border-color)',
+              background: 'var(--accent-color)',
+              color: 'var(--text-color)',
+            }}
+          >
             <SettingsAppearance />
           </div>
         </div>

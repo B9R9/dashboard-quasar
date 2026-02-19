@@ -8,9 +8,8 @@ export default function NotificationPanel({
   const hasItems = items.length > 0
 
   return (
-    <div className="notif-panel p-2" onMouseLeave={onMouseLeave}>
+    <div className="notif-panel" onMouseLeave={onMouseLeave}>
       <h4 className="notif-panel__title">{title}</h4>
-      <hr className="separator" />
       {loading && <p className="notif-panel__empty">Loading...</p>}
       {!loading && error && <p className="notif-panel__empty">{error}</p>}
       {!loading && !error && !hasItems && <p className="notif-panel__empty">No items</p>}

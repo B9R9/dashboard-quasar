@@ -13,6 +13,7 @@ export default function QuickLinksRow({
   return (
     <div
       className={`grid grid-cols-[32px_minmax(0,1fr)_32px_32px_32px_32px] items-center gap-2 p-2 border ${radiusClass}`}
+      style={{ borderColor: 'var(--border-color)' }}
     >
       <span className="material-symbols-outlined justify-self-center" aria-hidden>
         {icon}
@@ -20,22 +21,34 @@ export default function QuickLinksRow({
 
       <p className="m-0 truncate">{name}</p>
 
-      <button className="justify-self-center text-slate-600" onClick={() => moveUpQuickLink(id)}>
+      <button
+        className="justify-self-center"
+        style={{ color: 'var(--muted-color)' }}
+        onClick={() => moveUpQuickLink(id)}
+      >
         <span className="material-symbols-outlined" aria-hidden>
           arrow_upward
         </span>
       </button>
-      <button className="justify-self-center text-slate-600" onClick={() => moveDownQuickLink(id)}>
+      <button
+        className="justify-self-center"
+        style={{ color: 'var(--muted-color)' }}
+        onClick={() => moveDownQuickLink(id)}
+      >
         <span className="material-symbols-outlined" aria-hidden>
           arrow_downward
         </span>
       </button>
-      <button className="justify-self-center text-slate-600" onClick={onEdit}>
+      <button className="justify-self-center" style={{ color: 'var(--muted-color)' }} onClick={onEdit}>
         <span className="material-symbols-outlined" aria-hidden>
           edit
         </span>
       </button>
-      <button className="justify-self-center text-red-500" onClick={() => removeQuickLink(id)}>
+      <button
+        className="justify-self-center"
+        style={{ color: 'var(--danger-color)' }}
+        onClick={() => removeQuickLink(id)}
+      >
         <span className="material-symbols-outlined" aria-hidden>
           delete
         </span>

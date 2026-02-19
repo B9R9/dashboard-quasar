@@ -46,14 +46,19 @@ export default function Header() {
   const { quickLinks } = useQuickLinksStore()
 
   return (
-    <div className="flex flex-row items-center justify-between p-4 border-b w-full">
+    <div
+      className="flex flex-row items-center justify-between p-4 w-full"
+      style={{ borderBottom: '1px solid var(--border-color)' }}
+    >
       <div className="flex flex-row items-center gap-4">
         <WeatherWidget />
         <DateWidget />
       </div>
       <h1 className="header-title">Dashboard</h1>
-      <div className="flex flex-col items-end gap-2">
-        <small className="text-[9px] text-gray-400 p-1">Quick Links</small>
+      <div className="flex flex-col items-end gap-1">
+        <small className="text-[9px] p-1" style={{ color: 'var(--muted-color)' }}>
+          Quick Links
+        </small>
         <div className="flex flex-row items-center gap-4">
           {quickLinks.map((link) => (
             <div

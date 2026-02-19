@@ -16,8 +16,10 @@ export default function WeatherWidget() {
   }
 
   return (
-    <div className="flex flex-col items-center gap-2 rounded p-2 bg-gray-100 hover-widget">
-      <p className="text-sm text-gray-400">Weather</p>
+    <div className="weather-widget">
+      <p className="text-sm" style={{ color: 'var(--muted-color)' }}>
+        Weather
+      </p>
       <div className="flex flex-row items-center gap-2">
         <span className="material-symbols-outlined" aria-hidden>
           {icon}

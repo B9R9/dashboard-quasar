@@ -3,7 +3,16 @@ import { useEffect } from 'react'
 import useAppearanceStore from '../stores/appearance.store'
 
 export default function AppearanceSync() {
-  const { font, fontOptions } = useAppearanceStore()
+  const { theme, themeOptions, font, fontOptions } = useAppearanceStore()
+
+  useEffect(() => {
+    const selectedTheme = themeOptions.find((option) => option.id === theme)
+    if (!selectedTheme) return
+
+    Object.entries(selectedTheme.vars).forEach(([key, value]) => {
+      document.documentElement.style.setProperty(key, value)
+    })
+  }, [theme, themeOptions])
 
   useEffect(() => {
     const selectedFont = fontOptions.find((option) => option.id === font)

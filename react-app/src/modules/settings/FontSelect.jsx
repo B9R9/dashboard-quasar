@@ -32,15 +32,24 @@ export default function FontSelect({ id, value, options, onChange }) {
       <button
         id={id}
         type="button"
-        className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-left"
-        style={{ fontFamily: selected?.css }}
+        className="w-full rounded-md px-3 py-2 text-left"
+        style={{
+          fontFamily: selected?.css,
+          border: '1px solid var(--control-border)',
+          background: 'var(--accent-color)',
+          color: 'var(--control-text)',
+        }}
         onClick={() => setOpen((prev) => !prev)}
         aria-haspopup="listbox"
         aria-expanded={open}
       >
         <span className="flex items-center justify-between">
           <span>{selected?.label}</span>
-          <span className="material-symbols-outlined text-slate-500" aria-hidden>
+          <span
+            className="material-symbols-outlined"
+            style={{ color: 'var(--muted-color)' }}
+            aria-hidden
+          >
             {open ? 'expand_less' : 'expand_more'}
           </span>
         </span>
@@ -48,7 +57,8 @@ export default function FontSelect({ id, value, options, onChange }) {
 
       {open && (
         <ul
-          className="absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-lg"
+          className="absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded-md p-1 shadow-lg"
+          style={{ background: 'var(--control-bg)', border: '1px solid var(--control-border)' }}
           role="listbox"
           aria-labelledby={id}
         >
@@ -56,16 +66,25 @@ export default function FontSelect({ id, value, options, onChange }) {
             <li key={fontOption.id}>
               <button
                 type="button"
-                className={`w-full rounded px-2 py-2 text-left hover:bg-slate-100 ${
-                  fontOption.id === value ? 'bg-slate-100' : ''
-                }`}
-                style={{ fontFamily: fontOption.css }}
+                className="w-full rounded px-2 py-2 text-left"
+                style={{
+                  fontFamily: fontOption.css,
+                  background: fontOption.id === value ? 'var(--accent-color)' : 'transparent',
+                  color: 'var(--text-color)',
+                }}
                 onClick={() => {
                   onChange(fontOption.id)
                   setOpen(false)
                 }}
                 role="option"
                 aria-selected={fontOption.id === value}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'var(--accent-color)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background =
+                    fontOption.id === value ? 'var(--accent-color)' : 'transparent'
+                }}
               >
                 {fontOption.label}
               </button>

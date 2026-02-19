@@ -9,10 +9,25 @@
 
 :root {
   --bg-color: #ffffff;
+  --surface-color: #ffffff;
+  --surface-muted: #f8fafc;
   --text-color: #0f172a;
+  --muted-color: #64748b;
   --primary-color: #3b82f6;
   --secondary-color: #64748b;
   --accent-color: #f1f5f9;
+  --border-color: #e2e8f0;
+  --danger-color: #ef4444;
+  --danger-contrast-color: #ffffff;
+  --overlay-color: rgba(15, 23, 42, 0.45);
+  --shadow-color: 15, 23, 42;
+  --skeleton-base: #e5e7eb;
+  --skeleton-highlight: #f3f4f6;
+  --control-bg: #ffffff;
+  --control-text: #0f172a;
+  --control-border: #94a3b8;
+  --control-focus: #3b82f6;
+  --control-focus-ring: rgba(59, 130, 246, 0.2);
   --font-ui: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -25,6 +40,8 @@ body,
 }
 
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: var(--font-ui);
   line-height: 1.5;
   letter-spacing: 0.01em;
@@ -35,9 +52,31 @@ button {
   font-family: inherit;
 }
 
-input:focus,
-button:focus {
+input:not([type='checkbox']):not([type='radio']),
+select,
+textarea {
+  background: var(--control-bg);
+  color: var(--control-text);
+  /* border: 1px solid var(--control-border); */
+  border-radius: 8px;
+}
+
+input:not([type='checkbox']):not([type='radio'])::placeholder,
+textarea::placeholder {
+  color: var(--muted-color);
+}
+
+input:not([type='checkbox']):not([type='radio']):focus,
+select:focus,
+textarea:focus {
   outline: none;
+  border-color: var(--control-focus);
+  box-shadow: 0 0 0 3px var(--control-focus-ring);
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--control-focus-ring);
 }
 
 .tech-mono {
@@ -47,6 +86,6 @@ button:focus {
 .separator {
   border: 0;
   height: 1px;
-  background: #e2e8f0;
+  background: var(--border-color);
   margin: 8px 0;
 }
