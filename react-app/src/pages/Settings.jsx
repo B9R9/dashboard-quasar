@@ -1,3 +1,4 @@
+import SettingsAppearance from '../modules/settings/SettingsAppearance'
 import SettingsQuickLinks from '../modules/settings/SettingsQuickLinks'
 
 export default function Settings() {
@@ -25,8 +26,7 @@ export default function Settings() {
             <SettingsQuickLinks />
           </div>
           <div className="settings-page__content flex flex-col gap-4 border rounded-md p-4">
-            <h3 className="settings-page__subtitle">Other Settings</h3>
-            <p className="settings-page__text">More settings coming soon...</p>
+            <SettingsAppearance />
           </div>
         </div>
       </div>
