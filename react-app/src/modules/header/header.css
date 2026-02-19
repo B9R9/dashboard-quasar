@@ -222,3 +222,41 @@
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
   padding: 16px;
 }
+
+.settings-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.settings-modal__backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.settings-modal__card {
+  width: min(720px, 92vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  padding: 16px;
+  transform: translateY(8px) scale(0.98);
+  opacity: 0;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
+}
+
+.settings-modal__card.is-open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}

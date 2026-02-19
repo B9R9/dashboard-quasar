@@ -1,0 +1,92 @@
+import React from 'react'
+import { useState } from 'react'
+
+import useQuickLinksStore from '../../stores/quickLinks.store'
+
+export default function QuickLinkFormModal({ id, name, icon, url, onClose, onSave }) {
+  const [linkName, setLinkName] = useState(name || '')
+  const [linkIcon, setLinkIcon] = useState(icon || 'link')
+  const [linkUrl, setLinkUrl] = useState(url || '')
+  const { listIcons } = useQuickLinksStore()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    onSave({ id, name: linkName, icon: linkIcon, url: linkUrl })
+    onClose()
+  }
+
+  return (
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="bg-white rounded-md p-6 w-full max-w-md">
+        <h2 className="text-xl font-semibold mb-4">{id ? 'Edit Quick Link' : 'Add Quick Link'}</h2>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div>
+            <label htmlFor="link-name" className="block text-sm font-medium text-gray-700">
+              Name
+            </label>
+            <input
+              id="link-name"
+              type="text"
+              value={linkName}
+              onChange={(e) => setLinkName(e.target.value)}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="link-icon" className="block text-sm font-medium text-gray-700">
+              Icon
+            </label>
+
+            <div className="mt-1 flex items-center gap-2">
+              <span className="material-symbols-outlined" aria-hidden>
+                {linkIcon}
+              </span>
+
+              <select
+                id="link-icon"
+                value={linkIcon}
+                onChange={(e) => setLinkIcon(e.target.value)}
+                className="block w-full border border-gray-300 rounded-md p-2"
+              >
+                {listIcons.map((icon) => (
+                  <option key={icon} value={icon}>
+                    {icon}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div>
+            <label htmlFor="link-url" className="block text-sm font-medium text-gray-700">
+              URL
+            </label>
+            <input
+              id="link-url"
+              type="text"
+              value={linkUrl}
+              onChange={(e) => setLinkUrl(e.target.value)}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div className="flex justify-end gap-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}

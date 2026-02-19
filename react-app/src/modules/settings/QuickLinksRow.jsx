@@ -1,4 +1,14 @@
-export default function QuickLinksRow({ name, icon, isFirst, isLast }) {
+export default function QuickLinksRow({
+  id,
+  name,
+  icon,
+  isFirst,
+  isLast,
+  removeQuickLink,
+  moveUpQuickLink,
+  moveDownQuickLink,
+  onEdit,
+}) {
   const radiusClass = isFirst ? 'rounded-t-md' : isLast ? 'rounded-b-md' : 'rounded-none'
   return (
     <div
@@ -10,22 +20,22 @@ export default function QuickLinksRow({ name, icon, isFirst, isLast }) {
 
       <p className="m-0 truncate">{name}</p>
 
-      <button className="justify-self-center text-slate-600">
+      <button className="justify-self-center text-slate-600" onClick={() => moveUpQuickLink(id)}>
         <span className="material-symbols-outlined" aria-hidden>
           arrow_upward
         </span>
       </button>
-      <button className="justify-self-center text-slate-600">
+      <button className="justify-self-center text-slate-600" onClick={() => moveDownQuickLink(id)}>
         <span className="material-symbols-outlined" aria-hidden>
           arrow_downward
         </span>
       </button>
-      <button className="justify-self-center text-slate-600">
+      <button className="justify-self-center text-slate-600" onClick={onEdit}>
         <span className="material-symbols-outlined" aria-hidden>
           edit
         </span>
       </button>
-      <button className="justify-self-center text-red-500">
+      <button className="justify-self-center text-red-500" onClick={() => removeQuickLink(id)}>
         <span className="material-symbols-outlined" aria-hidden>
           delete
         </span>

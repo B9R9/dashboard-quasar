@@ -1,11 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../header.css'
 
 import useQuickLinksStore from '../../../stores/quickLinks.store'
 
 import DateWidget from './DateWidget'
 import NotificationPanel from './NotificationPanel'
-import SettingsModal from './SettingsModal'
 import WeatherWidget from './WeatherWidget'
 
 import useHeaderPanels from '../hooks/useHeaderPanels'
@@ -13,8 +13,9 @@ import useMessage from '../hooks/useMessage'
 import useNotif from '../hooks/useNotif'
 
 export default function Header() {
-  const { showNotif, showMessages, showSettings, openHeaderPanel, toggleHeaderPanel, closePanels } =
+  const { showNotif, showMessages, openHeaderPanel, toggleHeaderPanel, closePanels } =
     useHeaderPanels()
+  const navigate = useNavigate()
   const {
     notifications,
     loading: notifLoading,
@@ -55,7 +56,11 @@ export default function Header() {
         <small className="text-[9px] text-gray-400 p-1">Quick Links</small>
         <div className="flex flex-row items-center gap-4">
           {quickLinks.map((link) => (
-            <div key={link.id} className="quick-link">
+            <div
+              key={link.id}
+              className="quick-link"
+              onClick={() => window.open(link.url, '_blank')}
+            >
               <span className="material-symbols-outlined" aria-hidden>
                 {link.icon}
               </span>
@@ -103,13 +108,18 @@ export default function Header() {
             />
           )}
         </div>
-        <div className="settings-wrapper" onClick={() => toggleHeaderPanel('settings')}>
+        <div
+          className="settings-wrapper"
+          onClick={() => {
+            closePanels()
+            navigate('/settings')
+          }}
+        >
           <button className="header-icon-btn w-10 h-10" aria-label="Settings">
             <span className="material-symbols-outlined">settings</span>
           </button>
         </div>
       </div>
-      {showSettings && <SettingsModal open={showSettings} onClose={closePanels} />}
     </div>
   )
 }
