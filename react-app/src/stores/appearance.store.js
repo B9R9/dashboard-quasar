@@ -87,6 +87,32 @@ const themeOptions = [
       '--control-focus-ring': 'rgba(47, 158, 68, 0.22)',
     },
   },
+  {
+    id: 'wolt',
+    label: 'Wolt',
+    vars: {
+      '--bg-color': '#f4f9ff',
+      '--surface-color': '#ffffff',
+      '--surface-muted': '#eaf5ff',
+      '--text-color': '#0f253d',
+      '--muted-color': '#48637d',
+      '--primary-color': '#00c2e8',
+      '--secondary-color': '#145d7a',
+      '--accent-color': '#dff6ff',
+      '--border-color': '#7fd9ee',
+      '--danger-color': '#e53935',
+      '--danger-contrast-color': '#ffffff',
+      '--overlay-color': 'rgba(11, 37, 56, 0.5)',
+      '--shadow-color': '15, 37, 61',
+      '--skeleton-base': '#cfefff',
+      '--skeleton-highlight': '#e8f8ff',
+      '--control-bg': '#ffffff',
+      '--control-text': '#0f253d',
+      '--control-border': '#56c6e7',
+      '--control-focus': '#00a9d0',
+      '--control-focus-ring': 'rgba(0, 194, 232, 0.24)',
+    },
+  },
 ]
 
 export default create(

@@ -6,6 +6,7 @@ import useQuickLinksStore from '../../../stores/quickLinks.store'
 
 import DateWidget from './DateWidget'
 import NotificationPanel from './NotificationPanel'
+import TimeWidget from './TimeWidget'
 import WeatherWidget from './WeatherWidget'
 
 import useHeaderPanels from '../hooks/useHeaderPanels'
@@ -53,6 +54,7 @@ export default function Header() {
       <div className="flex flex-row items-center gap-4">
         <WeatherWidget />
         <DateWidget />
+        <TimeWidget />
       </div>
       <h1 className="header-title">Dashboard</h1>
       <div className="flex flex-col items-end gap-1">
