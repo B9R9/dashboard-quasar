@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const MOCK_TILES_DATA = [
+export const DASHBOARD_TILES_DATA = [
   {
     id: 'orders',
     title: 'Orders',
@@ -126,10 +126,8 @@ export default function useDashboardTiles() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
-
     const timer = setTimeout(() => {
-      setTilesData(MOCK_TILES_DATA)
+      setTilesData(DASHBOARD_TILES_DATA)
       setLoading(false)
     }, 700)
 

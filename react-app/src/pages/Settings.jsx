@@ -1,5 +1,6 @@
 import SettingsAppearance from '../modules/settings/SettingsAppearance'
 import SettingsQuickLinks from '../modules/settings/SettingsQuickLinks'
+import SettingsTiles from '../modules/settings/SettingsTiles'
 
 export default function Settings() {
   return (
@@ -21,7 +22,7 @@ export default function Settings() {
           </button>
         </div>
         <hr className="separator" />
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           <div
             className="settings-page__content flex flex-col gap-4 rounded-md p-4"
             style={{
@@ -41,6 +42,16 @@ export default function Settings() {
             }}
           >
             <SettingsAppearance />
+          </div>
+          <div
+            className="settings-page__content flex flex-col gap-4 rounded-md p-4"
+            style={{
+              border: '1px solid var(--border-color)',
+              background: 'var(--accent-color)',
+              color: 'var(--text-color)',
+            }}
+          >
+            <SettingsTiles />
           </div>
         </div>
       </div>
