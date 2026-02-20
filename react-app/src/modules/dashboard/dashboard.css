@@ -1,0 +1,20 @@
+.dashboard-skeleton-block {
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base) 25%,
+    var(--skeleton-highlight) 37%,
+    var(--skeleton-base) 63%
+  );
+  background-size: 400% 100%;
+  animation: dashboard-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes dashboard-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
