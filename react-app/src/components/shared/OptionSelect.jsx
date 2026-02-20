@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function FontSelect({ id, value, options, onChange }) {
+export default function OptionSelect({ id, value, options, onChange }) {
   const [open, setOpen] = React.useState(false)
   const wrapperRef = React.useRef(null)
 

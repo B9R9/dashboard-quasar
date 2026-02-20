@@ -1,5 +1,5 @@
 import useAppearanceStore from '../../stores/appearance.store'
-import FontSelect from './FontSelect'
+import OptionSelect from '../../components/shared/OptionSelect'
 
 export default function SettingsAppearance() {
   const { theme, themeOptions, setTheme, font, fontOptions, setFont } = useAppearanceStore()
@@ -15,14 +15,14 @@ export default function SettingsAppearance() {
         <label htmlFor="theme-select" className="settings-appearance__option-label">
           Theme
         </label>
-        <FontSelect id="theme-select" value={theme} options={themeOptions} onChange={setTheme} />
+        <OptionSelect id="theme-select" value={theme} options={themeOptions} onChange={setTheme} />
       </div>
 
       <div className="settings-appearance__option p-4">
         <label htmlFor="font-select" className="settings-appearance__option-label">
           Font
         </label>
-        <FontSelect id="font-select" value={font} options={fontOptions} onChange={setFont} />
+        <OptionSelect id="font-select" value={font} options={fontOptions} onChange={setFont} />
       </div>
     </div>
   )
