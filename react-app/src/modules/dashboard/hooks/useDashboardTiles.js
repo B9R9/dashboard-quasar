@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react'
 
-import DashboardTilesSkeleton from './DashboardTilesSkeleton'
-import TileKpi from './TileKpi'
-
 const MOCK_TILES_DATA = [
   {
     id: 'orders',
     title: 'Orders',
     headline: '128 orders',
     trend: '+12% vs yesterday',
-    period: 'Depuis ce matin',
+    period: 'Since this morning',
     updatedAt: '2026-02-20T14:20:00',
     stats: [
       { key: 'accepted', label: 'Accepted', value: 120, icon: 'check_circle' },
@@ -24,7 +21,7 @@ const MOCK_TILES_DATA = [
     title: 'Revenue / Finance',
     headline: '€18,420',
     trend: '+6.2% vs yesterday',
-    period: "Aujourd'hui",
+    period: 'Today',
     updatedAt: '2026-02-20T14:20:00',
     stats: [
       { key: 'gmv', label: 'GMV', value: '€21,980', icon: 'payments' },
@@ -43,7 +40,7 @@ const MOCK_TILES_DATA = [
     title: 'Performance / Operations',
     headline: 'Ops score 91/100',
     trend: '+2.1 pts vs yesterday',
-    period: "Aujourd'hui",
+    period: 'Today',
     updatedAt: '2026-02-20T14:20:00',
     stats: [
       { key: 'accepted', label: 'Accepted orders', value: 412, icon: 'check_circle' },
@@ -57,7 +54,7 @@ const MOCK_TILES_DATA = [
     title: 'Visibility / Ranking',
     headline: '#4 in category',
     trend: '+1 rank vs yesterday',
-    period: '7 derniers jours',
+    period: 'Last 7 days',
     updatedAt: '2026-02-20T14:20:00',
     stats: [
       { key: 'impressions', label: 'Impressions', value: '42.8k', icon: 'visibility' },
@@ -70,7 +67,7 @@ const MOCK_TILES_DATA = [
     title: 'Conversion',
     headline: '4.9%',
     trend: '+0.6 pts vs yesterday',
-    period: "Aujourd'hui",
+    period: 'Today',
     updatedAt: '2026-02-20T14:20:00',
     stats: [
       { key: 'menu_views', label: 'Menu views', value: '8,320', icon: 'menu_book' },
@@ -88,7 +85,7 @@ const MOCK_TILES_DATA = [
     title: 'Customer Experience',
     headline: '4.6 / 5',
     trend: '-0.1 vs yesterday',
-    period: '30 derniers jours',
+    period: 'Last 30 days',
     updatedAt: '2026-02-20T14:20:00',
     stats: [
       { key: 'rating', label: 'Avg rating', value: '4.6', icon: 'star' },
@@ -101,7 +98,7 @@ const MOCK_TILES_DATA = [
     title: 'Store Status / Availability',
     headline: '99.2% online',
     trend: '+0.4 pts vs yesterday',
-    period: "Aujourd'hui",
+    period: 'Today',
     updatedAt: '2026-02-20T14:20:00',
     stats: [
       { key: 'uptime', label: 'Uptime', value: '99.2%', icon: 'cloud_done' },
@@ -114,7 +111,7 @@ const MOCK_TILES_DATA = [
     title: 'Time-based',
     headline: 'Peak at 12:30',
     trend: 'Stable vs last week',
-    period: '7 derniers jours',
+    period: 'Last 7 days',
     updatedAt: '2026-02-20T14:20:00',
     stats: [
       { key: 'lunch_share', label: 'Lunch share', value: '46%', icon: 'lunch_dining' },
@@ -124,7 +121,7 @@ const MOCK_TILES_DATA = [
   },
 ]
 
-export default function DashboardTiles() {
+export default function useDashboardTiles() {
   const [tilesData, setTilesData] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -139,23 +136,5 @@ export default function DashboardTiles() {
     return () => clearTimeout(timer)
   }, [])
 
-  if (loading) {
-    return <DashboardTilesSkeleton count={8} />
-  }
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 p-4">
-      {tilesData.map((tile) => (
-        <TileKpi
-          key={tile.id}
-          title={tile.title}
-          headline={tile.headline}
-          trend={tile.trend}
-          period={tile.period}
-          updatedAt={tile.updatedAt}
-          stats={tile.stats}
-        />
-      ))}
-    </div>
-  )
+  return { tilesData, loading }
 }

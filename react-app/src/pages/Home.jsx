@@ -1,6 +1,6 @@
 import Search from '../modules/search/components/Search'
 import Header from '../modules/header/components/Header'
-import DashboardTiles from '../modules/dashboard/DashboardTiles'
+import DashboardTiles from '../modules/dashboard/components/DashboardTiles'
 
 export default function Home() {
   return (
