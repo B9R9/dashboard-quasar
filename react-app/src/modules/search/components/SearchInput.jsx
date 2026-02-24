@@ -1,6 +1,10 @@
 import React from 'react'
 
 export default function SearchInput({ value, onChange, onClear }) {
+  const handleInputChange = (event) => {
+    onChange(event.target.value)
+  }
+
   return (
     <div className="search-input__field">
       <span className="material-symbols-outlined search-input__icon-left" aria-hidden>
@@ -12,7 +16,7 @@ export default function SearchInput({ value, onChange, onClear }) {
         type="text"
         placeholder="Search..."
         value={value}
-        onChange={onChange}
+        onChange={handleInputChange}
       />
 
       {value ? (
