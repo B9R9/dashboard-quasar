@@ -57,7 +57,7 @@ export default function Search() {
     <div className="search">
       <SearchInput
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(value) => setSearchTerm(value)}
         onClear={() => setSearchTerm('')}
       />
       <small className="block w-1/2 text-right text-xs" style={{ color: 'var(--muted-color)' }}>
