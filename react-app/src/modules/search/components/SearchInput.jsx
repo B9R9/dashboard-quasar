@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SearchInput({ value, onChange, onClear }) {
   const handleInputChange = (event) => {
-    onChange(event.target.value)
+    onChange(event)
   }
 
   return (
